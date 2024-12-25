@@ -20,10 +20,6 @@ function Post({userId,id,title,body}:Posts) {
      <Text size="sm" c="dimmed">
       {body.slice(0,100)}
       </Text>
-      
-
-      
-
       <Link href={`/${id}`}>
         Details
       </Link>

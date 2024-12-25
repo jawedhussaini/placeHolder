@@ -3,10 +3,9 @@ import { fetchUsers } from "@/helper/users"
 import { Container, Flex, Text, Title } from "@mantine/core"
 
 
-async function page({searchParams}:{searchParams:{page:string}}) {
+async function page() {
 
-  const {page}=await searchParams
-  console.log(page)
+
 
     const users=await fetchUsers()
 

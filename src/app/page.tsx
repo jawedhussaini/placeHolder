@@ -4,16 +4,16 @@ import { fetchPosts } from "@/helper/fetchData";
 
 
 
-export default async function Home(  { searchParams }: { searchParams: { page?: string } }) { 
-    const page = searchParams?.page || "1";  // Default to page 1 if not present
+export default async function Home(  { searchParams }: { searchParams: { page?: number } }) { 
+    const {page}=await searchParams 
   console.log(`${page} page`);
 
-  const posts=await fetchPosts()
+  const posts=await fetchPosts(page)
   
   return (
     <>
 <Hero/>
-<Posts posts={posts} title="All Posts" cols={{ base: 1, sm: 2, lg: 3 }} description=" you can find the best psts in here for your social media"/>
+<Posts posts={posts.posts} page={page} totlal={posts.total} title="All Posts" cols={{ base: 1, sm: 2, lg: 3 }} description=" you can find the best psts in here for your social media"/>
 </>
   );
 }

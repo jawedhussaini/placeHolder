@@ -1,6 +1,9 @@
+"use client"
 import { Badge } from "@mantine/core"
 import Link from "next/link"
 import classes from "./Album.module.css"
+
+
 
 interface Albums{
     userId: number,
@@ -8,6 +11,7 @@ interface Albums{
     title: string
 }
 function Album(album:Albums) {
+   
     return (
    
         <Badge  size="lg" variant="outline">

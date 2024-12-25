@@ -9,8 +9,7 @@
   line-height: 1.05;
   font-size: 60px; /* Adjust rem values here */
   max-width: 100%;
-  color: white;
-}
+ }
 .logo{
    background: #3ACF04;
 background: linear-gradient(to right, #3ACF04 12%, #2A17CF 75%);

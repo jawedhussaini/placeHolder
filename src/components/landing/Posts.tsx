@@ -16,10 +16,12 @@ interface postsProps{
     title:string,
     description:string,
     cols?:any 
+    totlal:number
+    page?:number
 
     
 }
-function Posts({posts,title,description,cols}:postsProps) {
+async function Posts({posts,title,description,cols,totlal,page}:postsProps) {
     
       return (
     <Container className={classes.wrapper}>
@@ -32,15 +34,15 @@ function Posts({posts,title,description,cols}:postsProps) {
         </Text>
       </Container>
 
-      <SimpleGrid
-        mt={60}
+      <SimpleGrid 
+        m={60}
         cols={cols}
         spacing={{ base: "lg", md: "lg", lg: "xl" }}
        
       >
        {posts.map((post:Posts)=><Post key={post.id} {...post} />)}
       </SimpleGrid>
-      <Paginations totalPagess={10}/>
+      <Paginations  totalPagess={totlal}/>
     </Container>
   )
     
